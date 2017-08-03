@@ -4,6 +4,9 @@ require 'yahoo-finance'
 SlackRubyBot::Client.logger.level = Logger::WARN
 
 class MarketBot < SlackRubyBot::Bot
+  command 'ping' do |client, data, match|
+    client.say(text: 'pong', channel: data.channel)
+  end
   scan(/^intradia ([A-Z]{2,5}+)/) do |client, data, stocks|
     p stocks
     stocks.each do |stock|
@@ -36,7 +39,7 @@ class MarketBot < SlackRubyBot::Bot
               {
                   fallback: "#{quote["data"]["Time_in_message"]}",
                   title: "(#{quote["data"]["Date"]})",
-                  text: "$#{resp.body}",
+                  text: "#{quote["data"]}",
                   color:  '#00FF00' #: '#FF0000'
               }
           ]
