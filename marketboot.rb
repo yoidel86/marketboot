@@ -28,6 +28,7 @@ class MarketBot < SlackRubyBot::Bot
   url_api = "http://h-kont.herokuapp.com/api/fstatus"
   resp = Net::HTTP.get_response(URI.parse(url_api.strip))
   quote = JSON.parse(resp.body)
+  p quote
       client.web_client.chat_postMessage(
           channel: data.channel,
           as_user: true,
