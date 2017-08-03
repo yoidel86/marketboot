@@ -33,8 +33,8 @@ class MarketBot < SlackRubyBot::Bot
           as_user: true,
           attachments: [
               {
-                  fallback: "#{stock} : $#{quote["Time_in_message"]}",
-                  title: "#{stock} (#{quote["Date"]})",
+                  fallback: "#{quote["Time_in_message"]}",
+                  title: "(#{quote["Date"]})",
                   text: "$#{resp.body}",
                   color:  '#00FF00' #: '#FF0000'
               }
