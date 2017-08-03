@@ -24,7 +24,7 @@ class MarketBot < SlackRubyBot::Bot
     end
   end
 
-  command 'hkstatus' do |client, data, stocks|
+  scan(/^status/) do |client, data, stocks|
   url_api = "http://h-kont.herokuapp.com/api/fstatus"
   resp = Net::HTTP.get_response(URI.parse(url_api.strip))
   quote = JSON.parse(resp.body)
