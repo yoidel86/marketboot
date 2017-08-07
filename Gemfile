@@ -1,5 +1,7 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
 
 gem 'slack-ruby-bot'
-gem 'faye-websocket'
-gem 'yahoo-finance'
+gem 'puma'
+gem 'sinatra'
+gem 'dotenv'
+gem 'celluloid-io'
