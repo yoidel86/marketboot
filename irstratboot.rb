@@ -1,3 +1,3 @@
 require 'slack-ruby-bot'
-require 'irstratboot/commands/calculate'
+require 'irstratboot/commands/status'
 require 'irstratboot/bot'

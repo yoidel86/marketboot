@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'dotenv'
-Dotenv.load
-
+Dotenv.load('development.env')
+puts ENV["SLACK_API_TOKEN"]
 require 'irstratboot'
 require 'irstratboot/web'
 
